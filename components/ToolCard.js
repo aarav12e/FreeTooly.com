@@ -59,6 +59,41 @@ export default function ToolCard({ tool }) {
 
   return (
     <div
+<<<<<<< HEAD
+      className={`group relative bg-white border rounded-2xl p-5 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between h-full ${
+        starred
+          ? "border-amber-300 ring-2 ring-amber-400/20"
+          : "border-slate-200 hover:border-blue-500"
+      }`}
+    >
+      <Link href={`/tools/${tool.slug}`} className="block flex-1">
+        {/* Tool Icon & Badge Header */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-xl text-slate-800 group-hover:bg-blue-50 group-hover:border-blue-200 transition-colors">
+            {tool.icon || "🔧"}
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold bg-slate-100 text-slate-600 border border-slate-200 capitalize">
+              {tool.category?.replace(/-/g, " ")}
+            </span>
+            <button
+              onClick={handleStar}
+              className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all ${
+                starred
+                  ? "bg-amber-100 text-amber-500 border border-amber-300"
+                  : "bg-slate-50 text-slate-400 hover:text-amber-500 border border-slate-200"
+              }`}
+              title={starred ? "Remove from favorites" : "Add to favorites"}
+            >
+              <StarIcon filled={starred} />
+            </button>
+          </div>
+        </div>
+
+        {/* Tool Name Title */}
+        <h3 className="font-heading font-bold text-base text-slate-900 group-hover:text-blue-600 transition-colors leading-snug mb-1.5 line-clamp-1">
+=======
       className={`group relative bg-white dark:bg-[#131d2b] border rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-200 flex flex-col justify-between h-full ${
         starred
           ? "border-amber-300 dark:border-amber-400/50 ring-2 ring-amber-400/30 dark:ring-amber-400/20 hover:border-amber-400 dark:hover:border-amber-400 hover:shadow-amber-500/10"
@@ -107,24 +142,39 @@ export default function ToolCard({ tool }) {
 
         {/* Tool Name Title */}
         <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors leading-snug mb-2 line-clamp-1">
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
           {tool.name}
         </h3>
 
         {/* Tool Description */}
+<<<<<<< HEAD
+        <p className="text-xs text-slate-500 leading-relaxed line-clamp-2 mb-4">
+=======
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2 mb-4">
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
           {tool.description}
         </p>
       </Link>
 
       {/* Card Action Footer */}
+<<<<<<< HEAD
+      <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+        <span className="text-[11px] font-medium text-slate-400 flex items-center gap-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+=======
       <div className="pt-3 border-t border-slate-100 dark:border-[#1f2e41] flex items-center justify-between">
         <span className="text-[11px] font-medium text-slate-400 dark:text-slate-400 flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-cyan-400" />
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
           100% Free
         </span>
         <Link
           href={`/tools/${tool.slug}`}
+<<<<<<< HEAD
+          className="inline-flex items-center gap-1 font-semibold text-blue-600 group-hover:text-blue-700 group-hover:translate-x-0.5 transition-all"
+=======
           className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-blue-600 dark:text-cyan-400 group-hover:text-blue-700 dark:group-hover:text-cyan-300 group-hover:translate-x-1 transition-all"
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
         >
           <span>Use Tool</span>
           <span>→</span>

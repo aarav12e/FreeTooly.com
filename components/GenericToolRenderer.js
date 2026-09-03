@@ -202,7 +202,11 @@ export default function GenericToolRenderer({ tool }) {
     <div className="space-y-6">
       {/* Rate limit warning banner */}
       {rateLimitError && (
+<<<<<<< HEAD
+        <div className="p-3 bg-amber-50 border border-amber-200 text-amber-900 rounded-xl text-xs font-semibold">
+=======
         <div className="p-3 bg-amber-500/15 border border-amber-500/30 text-amber-900 dark:text-amber-300 rounded-xl text-xs font-bold animate-in fade-in">
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
           {rateLimitError}
         </div>
       )}
@@ -211,7 +215,11 @@ export default function GenericToolRenderer({ tool }) {
       {(slug === "compare-code" || slug === "text-compare") ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
+<<<<<<< HEAD
+            <label className="block text-xs font-semibold text-slate-700 mb-1">Text / Code Original</label>
+=======
             <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Text / Code Original</label>
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
             <textarea
               rows={6}
               placeholder="Paste original code or text here..."
@@ -221,7 +229,11 @@ export default function GenericToolRenderer({ tool }) {
             />
           </div>
           <div>
+<<<<<<< HEAD
+            <label className="block text-xs font-semibold text-slate-700 mb-1">Text / Code Modified</label>
+=======
             <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Text / Code Modified</label>
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
             <textarea
               rows={6}
               placeholder="Paste modified code or text here..."
@@ -235,7 +247,11 @@ export default function GenericToolRenderer({ tool }) {
         <div className="space-y-3">
           {(slug === "remove-lines-containing" || slug === "find-replace" || slug === "regex-tester") && (
             <div>
+<<<<<<< HEAD
+              <label className="block text-xs font-semibold text-slate-700 mb-1">
+=======
               <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
                 {slug === "regex-tester" ? "RegEx Pattern" : "Search Query / Replace Target"}
               </label>
               <input
@@ -250,7 +266,11 @@ export default function GenericToolRenderer({ tool }) {
 
           {category !== "random-generator" && (
             <div>
+<<<<<<< HEAD
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Input Text / Code / Value</label>
+=======
               <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Input Text / Code / Value</label>
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
               <textarea
                 rows={5}
                 placeholder={`Enter content for ${tool?.name}...`}
@@ -264,17 +284,28 @@ export default function GenericToolRenderer({ tool }) {
       )}
 
       {/* Action Button */}
+<<<<<<< HEAD
+      <button onClick={handleProcess} className="ct-btn-primary w-full py-3 text-sm">
+=======
       <button onClick={handleProcess} className="ct-btn-primary w-full py-3">
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
         {category === "random-generator" ? `Generate ${tool?.name}` : `Run ${tool?.name}`}
       </button>
 
       {/* Side-by-side Green/Red Syntax Diff Highlighting View */}
       {diffLines.length > 0 && (
         <div className="space-y-2">
+<<<<<<< HEAD
+          <label className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+            Side-by-Side Diff View ({diffLines.filter(d => d.type === "diff").length} Changes Found)
+          </label>
+          <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 overflow-x-auto font-mono text-xs divide-y divide-slate-800 space-y-1">
+=======
           <label className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
             Side-by-Side Diff View ({diffLines.filter(d => d.type === "diff").length} Changes Found)
           </label>
           <div className="bg-slate-900 dark:bg-[#090e16] border border-slate-800 dark:border-[#1e2c3e] rounded-xl p-4 overflow-x-auto font-mono text-xs divide-y divide-slate-800 space-y-1">
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
             {diffLines.map((item) => (
               <div
                 key={item.line}
@@ -303,7 +334,11 @@ export default function GenericToolRenderer({ tool }) {
       {output && (
         <div className="space-y-2">
           <div className="flex items-center justify-between">
+<<<<<<< HEAD
+            <label className="text-xs font-semibold text-slate-700">Result Output</label>
+=======
             <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Result Output</label>
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
             <CopyButton text={output} />
           </div>
           <textarea

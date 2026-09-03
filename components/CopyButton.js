@@ -13,7 +13,11 @@ function CopyIcon() {
 
 function CheckIcon() {
   return (
+<<<<<<< HEAD
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-600">
+=======
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
       <polyline points="20 6 9 17 4 12"/>
     </svg>
   );
@@ -35,18 +39,30 @@ export default function CopyButton({ text, className = "" }) {
   return (
     <button
       onClick={handleCopy}
+<<<<<<< HEAD
+      className={`ct-btn-secondary text-xs py-1.5 px-3 flex items-center gap-1.5 ${className}`}
+=======
       className={`btn-secondary text-sm flex items-center gap-2 ${className}`}
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
       type="button"
     >
       {copied ? (
         <>
           <CheckIcon />
+<<<<<<< HEAD
+          <span className="text-emerald-600 font-bold">Copied!</span>
+=======
           Copied!
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
         </>
       ) : (
         <>
           <CopyIcon />
+<<<<<<< HEAD
+          <span>Copy</span>
+=======
           Copy
+>>>>>>> 53844a0fad2b165a89f707b67cb1f34bd1c212a6
         </>
       )}
     </button>
