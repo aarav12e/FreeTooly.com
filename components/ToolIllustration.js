@@ -6,7 +6,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "morse-code-converter":
       return (
         <img
-          src="/Mors_Code.png"
+          src="/converter/Mors_Code.webp"
           alt="Morse Code Converter"
           className="h-full w-full object-contain"
         />
@@ -15,7 +15,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "base64-encode-decode":
       return (
         <img
-          src="/Base64_encode_and_decoder.png"
+          src="/web/Base64_encode_and_decoder.webp"
           alt="Base64 Encode and Decode"
           className="h-full w-full object-contain"
         />
@@ -24,7 +24,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "case-converter":
       return (
         <img
-          src="/Case_convertor.png"
+          src="/editing/Case_convertor.webp"
           alt="Case Converter"
           className="h-full w-full object-contain"
         />
@@ -33,7 +33,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "pdf-to-word":
       return (
         <img
-          src="/PDF_To_Word.png"
+          src="/pdf-tools/PDF_To_Word.webp"
           alt="PDF To Word"
           className="h-full w-full object-contain"
         />
@@ -42,7 +42,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "word-counter":
       return (
         <img
-          src="/Word_Counter.png"
+          src="/text-analysis/Word_Counter.webp"
           alt="Word Counter"
           className="h-full w-full object-contain"
         />
@@ -52,7 +52,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "kg-to-lbs":
       return (
         <img
-          src="/KG_to_Lbs.png"
+          src="/unit-conversion/KG_to_Lbs.webp"
           alt="kg to lbs Converter"
           className="h-full w-full object-contain"
         />
@@ -91,7 +91,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "merge-word":
       return (
         <img
-          src="/Merge_Word_file.png"
+          src="/word-tools/Merge_Word_file.webp"
           alt="Merge Word Files"
           className="h-full w-full object-contain"
         />
@@ -100,7 +100,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "protect-pdf":
       return (
         <img
-          src="/Protect_pdf.png"
+          src="/pdf-tools/Protect_pdf.webp"
           alt="Protect PDF"
           className="h-full w-full object-contain"
         />
@@ -109,7 +109,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "remove-punctuation":
       return (
         <img
-          src="/Remove_punctuation.png"
+          src="/editing/Remove_punctuation.webp"
           alt="Remove Punctuation"
           className="h-full w-full object-contain"
         />
@@ -118,7 +118,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "word-to-pdf":
       return (
         <img
-          src="/Word_to_pdf_converter.png"
+          src="/pdf-tools/Word_to_pdf_converter.webp"
           alt="Word to PDF Converter"
           className="h-full w-full object-contain"
         />
@@ -127,7 +127,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "image-to-pdf":
       return (
         <img
-          src="/Image_to_pdf.png"
+          src="/pdf-tools/Image_to_pdf.webp"
           alt="Image to PDF"
           className="h-full w-full object-contain"
         />
@@ -137,7 +137,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "reverse-text":
       return (
         <img
-          src="/Reverse_text.png"
+          src="/editing/Reverse_text.webp"
           alt="Reverse Text"
           className="h-full w-full object-contain"
         />
@@ -201,7 +201,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "compress-pdf":
       return (
         <img
-          src="/Compress_PDF.png"
+          src="/pdf-tools/Compress_PDF.webp"
           alt="Compress PDF"
           className="h-full w-full object-contain"
         />
@@ -244,7 +244,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "crop-jpg":
       return (
         <img
-          src="/Crop_JPG_Image.png"
+          src="/image-tools/Crop_JPG_Image.webp"
           alt="Crop JPG Image"
           className="h-full w-full object-contain"
         />
@@ -287,7 +287,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "qr-code-generator":
       return (
         <img
-          src="/QR_CodeGenerator.png"
+          src="/web/QR_CodeGenerator.webp"
           alt="QR Code Generator"
           className="h-full w-full object-contain"
         />
@@ -296,7 +296,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "free-logo-maker":
       return (
         <img
-          src="/Free_Logo_Maker.png"
+          src="/general/Free_Logo_Maker.webp"
           alt="Free Logo Maker"
           className="h-full w-full object-contain"
         />
@@ -355,7 +355,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "word-frequency-counter":
       return (
         <img
-          src="/Word_Frequency_Counter.png"
+          src="/text-analysis/Word_Frequency_Counter.webp"
           alt="Word Frequency Counter"
           className="h-full w-full object-contain"
         />
@@ -422,7 +422,7 @@ export default function ToolIllustration({ slug, name, category }) {
     case "remove-whitespace":
       return (
         <img
-          src="/Remove_WhitSpace.png"
+          src="/editing/Remove_WhitSpace.webp"
           alt="Remove Whitespace"
           className="h-full w-full object-contain"
         />
