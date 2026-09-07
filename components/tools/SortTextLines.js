@@ -12,18 +12,44 @@ function shuffle(array) {
   return arr;
 }
 
+const lineCollator = new Intl.Collator(undefined, {
+  numeric: true,
+  sensitivity: "base",
+});
+
 export default function SortTextLines() {
   const [text, setText] = useState("");
   const [output, setOutput] = useState("");
+  const [selectedMode, setSelectedMode] = useState(null);
 
   function sort(mode) {
-    const lines = text.split("\n").filter((l) => l !== "");
+    const lines = text.split(/\r?\n/).filter((line) => line.trim() !== "");
+    if (lines.length === 0) {
+      setOutput("");
+      return;
+    }
+
     let sorted;
-    if (mode === "asc") sorted = [...lines].sort((a, b) => a.localeCompare(b));
-    else if (mode === "desc") sorted = [...lines].sort((a, b) => b.localeCompare(a));
+    if (mode === "asc") sorted = [...lines].sort((a, b) => lineCollator.compare(a.trim(), b.trim()));
+    else if (mode === "desc") sorted = [...lines].sort((a, b) => lineCollator.compare(b.trim(), a.trim()));
     else sorted = shuffle(lines);
+    setSelectedMode(mode);
     setOutput(sorted.join("\n"));
   }
+
+  function clearText() {
+    setText("");
+    setOutput("");
+    setSelectedMode(null);
+  }
+
+  const actionButtonClass = (mode) => `rounded-xl border px-4 py-2.5 text-sm font-semibold transition-all ${
+    selectedMode === mode
+      ? "border-blue-600 bg-blue-600 text-white shadow-md shadow-blue-600/20 dark:border-cyan-400 dark:bg-cyan-400 dark:text-slate-950"
+      : "border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-cyan-700 dark:hover:bg-slate-700"
+  } disabled:cursor-not-allowed disabled:opacity-40`;
+
+  const hasInput = text.trim().length > 0;
 
   return (
     <div>
@@ -34,15 +60,41 @@ export default function SortTextLines() {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <div className="flex gap-2 mt-3">
-        <button type="button" className="btn-primary text-sm" onClick={() => sort("asc")}>
+      <div className="mt-3 flex flex-wrap gap-2">
+        <button
+          type="button"
+          className={actionButtonClass("asc")}
+          onClick={() => sort("asc")}
+          disabled={!hasInput}
+          aria-pressed={selectedMode === "asc"}
+        >
           Sort A-Z
         </button>
-        <button type="button" className="btn-secondary text-sm" onClick={() => sort("desc")}>
+        <button
+          type="button"
+          className={actionButtonClass("desc")}
+          onClick={() => sort("desc")}
+          disabled={!hasInput}
+          aria-pressed={selectedMode === "desc"}
+        >
           Sort Z-A
         </button>
-        <button type="button" className="btn-secondary text-sm" onClick={() => sort("random")}>
+        <button
+          type="button"
+          className={actionButtonClass("random")}
+          onClick={() => sort("random")}
+          disabled={!hasInput}
+          aria-pressed={selectedMode === "random"}
+        >
           Shuffle
+        </button>
+        <button
+          type="button"
+          className="rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-600 transition-colors hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+          onClick={clearText}
+          disabled={!text && !output}
+        >
+          Clear
         </button>
       </div>
       {output && (

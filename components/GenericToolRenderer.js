@@ -55,6 +55,19 @@ export default function GenericToolRenderer({ tool }) {
         .sort((a, b) => b[1] - a[1])
         .map(([w, c]) => `${w}: ${c}`)
         .join("\n");
+    } else if (slug === "number-sorter") {
+      const values = input.trim() ? input.trim().split(/[\s,]+/) : [];
+      const integerValues = values.length > 0 && values.every((value) => /^[+-]?\d+$/.test(value));
+      const numbers = values.map(Number);
+      const hasInvalidValue = !integerValues && values.some((value, index) => value === "" || !Number.isFinite(numbers[index]));
+
+      if (hasInvalidValue || numbers.length === 0) {
+        res = "Please enter valid numbers separated by spaces, commas, or new lines.";
+      } else if (integerValues) {
+        res = values.map(BigInt).sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)).join("\n");
+      } else {
+        res = numbers.sort((a, b) => a - b).join("\n");
+      }
     }
 
     // 2. Syntax Diff Highlighting for Code Comparison & Text Compare
