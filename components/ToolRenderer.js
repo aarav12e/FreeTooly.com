@@ -68,6 +68,11 @@ import FiveGNRThroughput from "@/components/tools/FiveGNRThroughput";
 import FiveGArfcnCalculator from "@/components/tools/FiveGArfcnCalculator";
 import InvoiceGenerator from "@/components/tools/InvoiceGenerator";
 import PngToWebp from "@/components/tools/PngToWebp";
+import LineGraphMaker from "@/components/tools/LineGraphMaker";
+import SqlBeautifier from "@/components/tools/SqlBeautifier";
+import RandomizeText from "@/components/tools/RandomizeText";
+import TextToHandwriting from "@/components/tools/TextToHandwriting";
+import HtmlBeautifier from "@/components/tools/HtmlBeautifier";
 
 const componentMap = {
   "png-to-webp": PngToWebp,
@@ -101,6 +106,7 @@ const componentMap = {
   "add-line-numbers": AddLineNumbers,
   "sort-text-lines": SortTextLines,
   "css-beautifier": CssBeautifier,
+  "sql-beautifier": SqlBeautifier,
   "morse-code-converter": MorseCodeConverter,
 
   "word-to-pdf": WordToPdf,
@@ -131,6 +137,10 @@ const componentMap = {
   "numbers-to-words": NumbersToWords,
   "hex-to-rgb": HexToRgb,
   "snake-case-to-camel": SnakeCamelConverter,
+  "line-graph-maker": LineGraphMaker,
+  "randomize-text": RandomizeText,
+  "text-to-handwriting": TextToHandwriting,
+  "html-beautifier": HtmlBeautifier,
   "replace-newlines-commas": () => <ReplaceNewlines defaultSeparator="commas" />,
   "replace-newlines-semicolons": () => <ReplaceNewlines defaultSeparator="semicolons" />,
 
